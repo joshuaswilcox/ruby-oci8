@@ -1,3 +1,4 @@
+require 'pry'
 require 'date'
 
 class OCI8
@@ -178,7 +179,7 @@ class OCI8
         def array_to_time(ary, timezone)
           return nil if ary.nil?
 
-          year, month, day, hour, minute, sec, nsec, tz_hour, tz_min = ary
+          year, month, day, hour, minute, sec, nsec, tz_hour, tz_min, dttm = ary
           nsec ||= 0
 
           if timezone
