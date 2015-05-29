@@ -118,17 +118,17 @@ VALUE oci8_make_ocitimestamp(OCIDateTime *dttm, boolean have_tz)
 
     chkerr(OCIDateTimeGetDate(oci8_envhp, oci8_errhp, dttm, &year, &month, &day));
     chkerr(OCIDateTimeGetTime(oci8_envhp, oci8_errhp, dttm, &hour, &minute, &sec, &fsec));
-    
+
      if (have_tz) {
          OCIDateTimeGetTimeZoneOffset(oci8_envhp, oci8_errhp, dttm, &tz_hour, &tz_minute);
-         
-//         OCIErrorGet ((dvoid *) oci8_errhp, (ub4) 1, (text *) NULL, &errcode,
-//                      errbuf, (ub4) sizeof(errbuf), (ub4) OCI_HTYPE_ERROR);
-//
-//         
-//         if (errcode != 1805 || errcode != 1403 || errcode != 0){
-//             rb_raise(rb_eRuntimeError, "timestamps error from value %ld with error %ld", tz_hour, errcode);
-//         }
+
+        OCIErrorGet ((dvoid *) oci8_errhp, (ub4) 1, (text *) NULL, &errcode,
+                     errbuf, (ub4) sizeof(errbuf), (ub4) OCI_HTYPE_ERROR);
+
+
+        if (errcode != 1805 || errcode != 1403 || errcode != 0){
+            rb_raise(rb_eRuntimeError, "timestamps error from value %ld with error %ld", tz_hour, errcode);
+        }
      }
 
     return rb_ary_new3(9,
