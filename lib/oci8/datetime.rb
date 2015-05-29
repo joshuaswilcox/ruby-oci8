@@ -1,4 +1,3 @@
-require 'pry'
 require 'date'
 
 class OCI8
@@ -246,13 +245,13 @@ class OCI8
     #
     #   # Changes the mapping for DATE
     #   OCI8::BindType::Mapping[OCI8::SQLT_DAT] = OCI8::BindType::DateTime
-    #   
+    #
     #   # Changes the mapping for TIMESTAMP
     #   OCI8::BindType::Mapping[OCI8::SQLT_TIMESTAMP] = OCI8::BindType::DateTime
-    #   
+    #
     #   # Changes the mapping for TIMESTAMP WITH TIME ZONE
     #   OCI8::BindType::Mapping[OCI8::SQLT_TIMESTAMP_TZ] = OCI8::BindType::DateTime
-    #   
+    #
     #   # Changes the mapping for TIMESTAMP WITH LOCAL TIME ZONE
     #   OCI8::BindType::Mapping[OCI8::SQLT_TIMESTAMP_LTZ] = OCI8::BindType::DateTime
     #

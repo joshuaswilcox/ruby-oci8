@@ -2,7 +2,6 @@
 # OCI8::NamedType
 #
 require 'oci8/metadata.rb'
-require 'pry'
 class OCI8
 
   # Returns the type descriptor object which correspond to the given class.
